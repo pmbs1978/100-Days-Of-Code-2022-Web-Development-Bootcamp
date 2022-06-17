@@ -1,7 +1,15 @@
+header {
+    margin-bottom: 64px;
+}
+
 h1 {
    font-size: 48px;
    color: rgb(71, 62, 62);
    margin: 12px 0; 
+}
+
+#description {
+    margin-bottom: 36px;
 }
 
 a {
@@ -19,7 +27,6 @@ a:hover {
 
 ol {
     list-style: none;
-    font-style: italic;
     width: 500px;
     margin: 36px auto 0 auto;
     padding: 0;
@@ -30,4 +37,18 @@ li {
     margin: 32px;
     border-radius: 6px;
     padding: 16px;
+}
+
+h2 {
+    color: rgb(78, 13, 5);
+    font-family: 'Oswald', sans-serif;
+}
+
+main p{
+    margin: 12px;
+    color: rgb(71, 29, 22);
+}
+
+.highlight-goal {
+    background-color: rgb(226, 115, 101);
 }
