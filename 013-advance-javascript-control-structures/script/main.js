@@ -52,6 +52,8 @@ while (y < 10 ) {
     y++
 }
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++
+
 const CALCULATEDSUMBTN = document.querySelector('#calculator button')
 
 CALCULATEDSUMBTN.addEventListener('click', function() {
@@ -68,11 +70,46 @@ CALCULATEDSUMBTN.addEventListener('click', function() {
     CALCULATEDSUM.textContent = result
 })
 
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 const LINKSBTN = document.querySelector('#highlight-links button')
 
 LINKSBTN.addEventListener('click', function() {
     const LINKS = document.querySelectorAll('#highlight-links a')
     for (let link of LINKS) {
         link.classList.add('highlight')
+    }
+})
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+const USERDATABTN = document.querySelector('#user-data button')
+let show = false
+
+USERDATABTN.addEventListener('click', function() { 
+    const PERSONDATA = {
+        nome: 'Pedro',
+        idade: 44,
+        email: 'pedro@email.com',
+        sexo: 'male'
+    }
+    
+    const OUTPUTUSERDATA = document.getElementById('output-user-data')
+    if(!show){
+        
+        for (item in PERSONDATA) {
+            const USERDATALIST = document.createElement('li')
+            USERDATALIST.textContent = item + ': ' + PERSONDATA[item]
+            OUTPUTUSERDATA.appendChild(USERDATALIST)
+        }
+        show = !show
+        USERDATABTN.textContent = 'Hide User Data'
+    } else {
+        REMOVEUSERDATALIST = document.querySelectorAll('#output-user-data li')
+        REMOVEUSERDATALIST.forEach(element => {
+            element.remove()
+        });
+        show = !show
+        USERDATABTN.textContent = 'Display User Data'
     }
 })
